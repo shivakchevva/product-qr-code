@@ -1,0 +1,28 @@
+# block.block.productqrcode.yml
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - qr_code_generation
+  theme:
+    - bartik
+id: productqrcode
+theme: bartik
+region: sidebar_second
+weight: 0
+provider: null
+plugin: product_qr_code
+settings:
+  id: product_qr_code
+  label: 'Product QR Code'
+  label_display: '0'
+  provider: qr_code_generation
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      product: product
